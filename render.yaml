@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: rekam-medis-gigi
+    runtime: python
+    buildCommand: ""
+    startCommand: gunicorn rekam_medis_gigi.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: rekam_medis_gigi.settings
+      - key: PYTHON_VERSION
+        value: 3.11
